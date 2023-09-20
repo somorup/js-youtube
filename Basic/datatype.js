@@ -6,6 +6,7 @@ const c=3
 d=4 //this is also a type of variable declaration, but not encouraged
 //null and undefined is also a datatype. Null is a standalone value, undefined is when we do not assign any value to a variable.typeof null is object
 //symbol-> is used for uniqueness
+//to convert a number to bigInt just add 'n' with the number
 
 /*console.log([a,b,c,d])
 console.table([a,b,c,d])

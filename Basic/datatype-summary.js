@@ -5,14 +5,34 @@ parameters and so the value of actual parameters can never get modified by forma
  7types: String, number, boolean, null, undefined, symbol, bigint
 2.Non Primitive datatype- This datatype uses Call by Reference parameter passing, i.e., the address of the variable is passed 
 into the function call as the actual parameter so actual parameters gets modified by formal parameters as memory allocation is same for both
- 3types: array, objects, functions
+ 3types: array, objects, functions -- datatype is object for all 3
 
 JS is dynamically typed language, i.e., data types of variables are determined by the value they hold at runtime 
 
-Symbol datatype is for uniqueness, i.e., even if two variables have same symbol still they are different*/
+Symbol datatype is for uniqueness, i.e., even if two variables have same symbol still they are different
 const id=Symbol('123')
 const anotherId = Symbol('123')
 console.log(id===anotherId); //output- false
+
+array:
+const heros=["superman","spiderman"]
+
+object:
+let myObj {
+    name = "sinchan",
+    age = 5,
+} //anything in between the {} is object, datatype inside can be anything
+
+Function: 
+by variable declaration method 
+const myFunction = function() {
+    console.log('Hello');
+}*/
+
+
+
+
+
 
 
 
