@@ -27,7 +27,30 @@ Function:
 by variable declaration method 
 const myFunction = function() {
     console.log('Hello');
-}*/
+}
+
+-----------------------------------------------------------------------------------
+1.Heap Memory- Stores NonPrimitive datatype, Call by Reference so when any value is changed the original varible value gets changed*/
+let userOne = {
+    name:"sinchan",
+    age:5,
+}
+
+let usertwo = userOne
+usertwo.age = 10
+
+console.log(userOne);
+console.log(usertwo);
+
+2./*Stack Memory- Stores Primitive datatype, it returns a copy of the original value so original variable value is not altered,
+it is Call by Value*/
+let name = "google"
+let anotherName = name
+anotherName = "yahoo"
+
+console.log(name)
+console.log(anotherName)
+  
 
 
 
