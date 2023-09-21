@@ -39,17 +39,17 @@ let userOne = {
 let usertwo = userOne
 usertwo.age = 10
 
-console.log(userOne);
-console.log(usertwo);
+console.log(userOne.age);//age value is changed to 10
+
 
 2./*Stack Memory- Stores Primitive datatype, it returns a copy of the original value so original variable value is not altered,
-it is Call by Value*/
+it is Call by Value
 let name = "google"
 let anotherName = name
 anotherName = "yahoo"
 
 console.log(name)
-console.log(anotherName)
+console.log(anotherName)*/
   
 
 
