@@ -20,11 +20,15 @@ console.log(name+age+"value");
 The string literal should be wrapped in backticks (``) and ${expression} acts as placeholder*/
 console.log(`Hi I am ${name} and my age is ${age}`)
 
-/* more methods*/
+/* more methods
 const method1 = name1.substring(0,4) //this will go till 3, rajuu
 console.log(method1);
-const method2 = name1.slice(-4,3) //starts from last element to 3, rajuu
-console.log(method2);
+const method2 = name1.slice(-4,-3) //starts from last element to 3, rajuu
+console.log(method2);*/
+//.trim() to clear off the front and back spaces, .replace('original', 'expected'), .includes()
 
+//to convert string to array
+const newname = "learning-Js-Youtube"
+console.log(newname.split("-"));
 
 
