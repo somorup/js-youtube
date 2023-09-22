@@ -31,4 +31,37 @@ console.log(method2);*/
 const newname = "learning-Js-Youtube"
 console.log(newname.split("-"));
 
+//NUMBERS AND MATHS
+//same as String, i.e., if declared through obiect method then Number prototype methods become available to User
+
+/*const score = 100
+console.log(score);
+const newNumb = new Number(100)
+console.log(newNumb) // prototype methods can be used
+console.log(newNumb.toFixed(2)) //the decimal place is fixed to 2 places
+console.log(newNumb.toString().length);
+const Numb2 = 123.89
+console.log(Numb2.toPrecision(3)) //rounds of the number considering the n+1 the digit
+const currency = 1000000
+console.log(currency.toLocaleString('en-In')) //coverts to indian currency format*/
+
+//write console.log(Math) inside console to see all the arguments and functions available
+//Math.abs(-5) -> negative to positive, Math.round(4.6), Math.ceil(4.2) -> converts to max value, Math.floor(4.9)
+console.log(Math.random()); //prints value between 0 to 1
+//to give value greater than 1
+console.log(Math.random()*10)
+//to get the lowest value
+console.log(Math.floor(Math.log()*10))
+//but if 0.1 comes then it will convert to 0 so
+console.log((Math.floor(Math.log()*10))+1)
+//to get random number between a range
+const min =10
+const max =20
+console.log(Math.floor(Math.random()*(max-min+1))+min);//+min is to ensure the number is greater than 10
+
+
+
+
+
+
 
