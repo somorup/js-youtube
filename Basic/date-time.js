@@ -25,6 +25,11 @@ let ddate = new Date()
 console.log(ddate.getMonth()) //for extracting month, starts from 0
 console.log(ddate.getDay()) //day starts from Monday
 
+let newDate = new Date()
+console.log(newDate.toLocaleDateString('default',{
+    weekday: "short",
+}))
+
 
 
 
