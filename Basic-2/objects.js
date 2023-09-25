@@ -107,4 +107,34 @@ console.log(Object.entries(event));
     name:"Sam",
     isLoggedIn:false
 }
-event*/
+event
+
+//De-Structure Objects
+//object declaration
+const course={
+    courseName:"JS",
+    price:999,
+    courseInstructor:"Hitesh"
+}
+//object access
+//console.log(course.courseInstructor) 
+//or, better syntax
+const {courseInstructor}=course 
+console.log(courseInstructor);
+//we can short the courseInstructor name too
+const{courseInstructor:instructor}=course
+console.log(instructor);*/
+
+//API
+/*API gets JSON values from backend. we will use fetch method of JS to get the response data and convert it into object.
+Mostly JSON looks the following 2types
+1. objects declaration format without the object name and both keys, pairs are string format
+{
+    "name":"me",
+    "age":5
+}
+//2.An array of objects
+[
+    {},
+    {}
+]*/
