@@ -54,13 +54,44 @@ function loggedUser(username="sam") {
         return 
     }
     return `${username} is logged in`
-}*/
+}
 
+//For dynamic number of argument passing, we simply do not know how many parameters to write inside function
+//so we use rest operator(syntax same as spread operator)
 
+function cart(...num1){ //... means collecting all the values together and storing it inside num1 variable
+    return num1
+}
+console.log(cart(1,2,3,4))
 
+function cartValue(value1, value2, ...value){
+    return value
+}
+console.log(cartValue(100,200,300,400)) //...value captures only leftover values not all*/
 
+//Passing object into function
+const user= {
+    username:"zora",
+    age:5
+}
 
+function toHandleObject(anyObject) {
+    console.log(`Username is ${anyObject.username} and age is ${anyObject.age}`);
+}
 
+toHandleObject(user)
+
+//we can directly pass object too
+toHandleObject({
+    userid:1,
+    fullname:"sin"
+})
+
+//Passing array into function
+const newsky=[1,2,3,4,5]
+function newResult() {
+    
+}
 
 
 
