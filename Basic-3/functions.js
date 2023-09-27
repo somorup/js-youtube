@@ -67,7 +67,7 @@ console.log(cart(1,2,3,4))
 function cartValue(value1, value2, ...value){
     return value
 }
-console.log(cartValue(100,200,300,400)) //...value captures only leftover values not all*/
+console.log(cartValue(100,200,300,400)) //...value captures only leftover values not all
 
 //Passing object into function
 const user= {
@@ -85,13 +85,15 @@ toHandleObject(user)
 toHandleObject({
     userid:1,
     fullname:"sin"
-})
+})*/
 
 //Passing array into function
 const newsky=[1,2,3,4,5]
-function newResult() {
-    
+//we will declare a function which will accept the array and return its second value
+function newResult(arrayWeGot) {
+    return arrayWeGot[1]
 }
+console.log(newResult(newsky));
 
 
 
