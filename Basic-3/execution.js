@@ -10,4 +10,7 @@
  *Function EC and Eval EC is also created
 2.Memory Creation Phase -- memory is allocated for all variables and "undefined" value is stored inside them. Function name gets
     all the function defination but not executed. function calling variables get undefined stored inside them
-3.Execution Phase*/
+3.Execution Phase -- variables get the values stored inside them. In this phase, when the program controller comes to function
+calling line, everytime for a function call a new variable environment and execution thread is created called new execution context
+and Memory Creation Phase, Execution Phase again takes place at function defination part. The function returns the result to
+global execution context and new execution context gets deleted
