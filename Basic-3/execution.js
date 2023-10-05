@@ -14,3 +14,8 @@
 calling line, everytime for a function call a new variable environment and execution thread is created called new execution context
 and Memory Creation Phase, Execution Phase again takes place at function defination part. The function returns the result to
 global execution context and new execution context gets deleted
+
+//Call Stack
+1.It is like a real stack in data structure, where function is pushed in and popped out following LIFO principle
+2.In the stack, first goes is Global Execution Context, then function goes inside -> executes -> goes out of stack
+*/
