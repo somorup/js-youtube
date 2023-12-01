@@ -27,6 +27,33 @@
 //changing the headline of a wikipedia page
 document.getElementById('firstHeading')
 document.getElementById('firstHeading').innerHTML = "<h1>Shubman Gill</h1>"
+
+//In console, to see the locaters
+document.getElementById('title')
+document.getElementById('title').className
+document.getElementById('title').getAttribute('class')
+//we can also store the locaters value
+const title = document.getElementById('title')
+
+//further styling the frontend
+title.style.backgroundColor = 'green'
+title.style.borderRadius = '15px' //to make the corners round
+title.style.padding = '15px' //to increase the top and bottom size of the block 
+
+//extracting the content
+3 types- title.innerHTML, title.textContent, title.innerText
+innerText only shows the display content, title.textContent shows the hidden content too, 
+innerHTML shows html tags too along with hidden content
+
+//query selector
+document.querySelector('h1') -- only gives the 1st h1 query
+//to select using using id value or class className
+document.querySelector('#idValue')
+document.querySelector('.className')
+document.querySelector('input[type="password"]')
+
+//In console, we can overwrite any Attribute
+document.getElementById('title').setAttribute('class','test')
 */
 
 
