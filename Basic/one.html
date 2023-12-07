@@ -14,6 +14,11 @@
     <div>
         <h1 id="title" class="heading">Learning continues</h1>
         <p>Loren ipsum</p> //paragraph
+        <ul> //starts a bulleted(or unordered) list
+        	<li class="list-name">one</li> 
+            <li class="list-name">two</li>
+            <li class="list-name">three</li>
+        </ul>
     </div>
 </body>
 </html>
@@ -47,10 +52,50 @@ innerHTML shows html tags too along with hidden content
 
 //query selector
 document.querySelector('h1') -- only gives the 1st h1 query
-//to select using using id value or class className
+//to select using id value or class className
 document.querySelector('#idValue')
 document.querySelector('.className')
 document.querySelector('input[type="password"]')
+
+//Difference between query and querySelectorAll is the datatype returned
+document.querySelectorAll('h1') --returns an entire NodeList which is NOT ARRAY though it looks like
+document.querySelectorAll('.className')
+//NodeList is a prototype,just like Array. we can open the Prototype and see the methods it has.
+//how to check prototype array?
+const myArray = [1,2,3,4]
+myArray
+//open the prototype dropdown and see the methods
+//how to check prototype NodeList ?
+const tempList = document.querySelectorAll('h1')
+tempList
+
+//we can change the colour of just like 
+tempList[0].style.color = 'green' //tempList.style.color = 'green' will not work
+
+//running foreach loop in querySelectorAll
+syntax of foreach loop-> foreach (callback function) // callback function is a function without name
+tempList.forEach(function (iteratorElement) {
+    iteratorElement.style.backgroundColor = 'grey'
+})
+
+const headings = document.querySelectorAll('.mw-headline')
+headings.forEach(function (l) {
+    l.style.backgroundColor = 'red'
+    l.style.color = 'grey'
+    l.style.padding = '10px'
+    l.innerText = 'Stop'
+})
+
+//running getElementsByClassName -- returns HTMLCollection prototype
+document.getElementsByClassName('list-name')
+//on checking the prototype there is no methods to loop for HTMLCollection
+--so convert HTMLCollection to Array
+const myClass = document.getElementsByClassName('list-name')
+const myArray = Array.from(myClass)
+--now running foreach loop over the Array
+myArray.forEach(function(li) {
+    li.style.color='orange'
+})
 
 //In console, we can overwrite any Attribute
 document.getElementById('title').setAttribute('class','test')
