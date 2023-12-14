@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai and Code</title>
+</head>
+<body style="background-color: aqua;">
+    <ul> class= "language" 
+        <li>Javascript</li>
+    </ul>
+</body>
+//designing a function to add more language in the list
+//pass the language name to be added as parameter to the function
+//create a list item -> select the class=language -> append inside it
+<script>
+    function addLanguage(langName) {
+        //creating list element
+        const liElement= document.createElement('li')
+        //add value to the element
+        liElement.innerHTML=`${langName}`
+        //searching the class, where we have to add the element
+        const findClass = document.querySelector('.language')
+        //add the value to the found class
+        findClass.appendChild(liElement)
+
+    }
+    addLanguage('python') //passing value to the function
+    
+    //we can also write a more optimized function than upper one
+    function addLanguage(langName) {
+        //creating list element
+        const liElement= document.createElement('li')
+        //add value to the element
+        const addText= document.createTextNode(langName)
+        liElement.appendChild(addText) //using appendChild instead of innerHTML makes less traversal 
+        //searching the class, where we have to add the element
+        const findClass = document.querySelector('.language')
+        //add the value to the found class
+        findClass.appendChild(liElement) 
+
+    }
+    addOptiLanguage('C++')
+
+//Editing the list values(here we are taking 2nd list value)
+    //Finding the value
+    const secondLang= document.querySelector("li:nth-child(2)")
+    //we can directly change the innerHTML then , but it is not optimised way
+    //secondLang.innerHTML="Changed"
+    //instead we will make a new element like prev-> put the new value in it -> replace the old element
+    const newElement = document.createElement('li')
+    newElement.textContent="Change Value" //there might be discussion about textContent vs innerHTML optimization
+    secondLang.replaceWith(newElement) //we had reference of that element stored in secondLang so changed that directly
+
+//Editing using outerHTML
+    //Finding the value
+    const firstLang= document.querySelector("li:first-child")
+    firstLang.outerHTML='<li>Changed</li>'
+
+//Removing value
+    //Finding the value
+    const lastLang= document.querySelector("li:last-child")
+    lastLang.remove()
+</script>
+</html>
