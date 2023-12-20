@@ -82,7 +82,27 @@
     //Click on the images, should make them delete
 
     //selecting the id which contains all the images
-    const image= document.querySelectorAll('#images')
+    document.querySelector('#images').addEventListener('click', function (e) {
+        console.log(e); //gives pointerEvent containig all the details of the image
+        console.log(e.target); //gives all the tags and size of the image
+        console.log(e.target.parentNode) //parentNode means it is moving to li tag here
+
+        let removeIt = e.target.parentNode
+        removeIt.remove()
+        //or we can write instead of line 91
+        //removeIt.parentNode -> means it is moving to ul tag
+        //removeIt.parentNode.removeChild(removeIt)
+
+        //since if we click outside everything is getting deleted
+        //let us print the tagname of images and outside click
+
+        console.log(e.target.tagName); //clicked on image -> IMG tagname is coming, clicked on outside -> LI tagname
+        if(e.target.tagName === 'IMG') {
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+        }
+        
+    })
     
     
 </script>
