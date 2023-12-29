@@ -61,10 +61,10 @@ function displayMessage(message) {
 
 function end() {
   userInput.value = '';
-  userInput.setAttribute('diabled', true);
-  p.classList.add('button');
-  p.innerHTML = `<h2 id="newGame">Start New Game</h2>`;
-  startOver.appendChild(p);
+  userInput.setAttribute('disabled', true);
+  const b = document.createElement("BUTTON")
+  b.innerHTML = '<h2>Start New Game</h2>';
+  startOver.appendChild(b);
   playGame = false;
   newGame();
 }
@@ -75,7 +75,6 @@ function newGame() {
   numGuess = 0
   guessSlot.innerHTML = ''
   remaining.innerHTML = `${10 - numGuess}`;
-  userInput.setAttribute('diabled', false);
-  startOver.removeChild(p)
+  userInput.setAttribute('disabled', false);
   playGame=true
 }
