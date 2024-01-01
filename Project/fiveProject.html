@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur Code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+//setTimeout is a method which makes an API call in Web API.It is used when we need to execute a task after certain time
+//Learn all 4 methods together-- setTimeout(function(func name not required) or function reference,timeout in ms-- function(){},1000), 
+//setInterval(),clearInterval(),clearTimeout()
+
+const printName = function(){
+    console.log("Name")}
+    setTimeout(printName,1000) //we have to pass handler so do not write printName()
+
+const changeTitle = function(){
+document.querySelector('h1').innerHTML = "BEST JS SERIES" 
+}
+setTimeout(changeTitle,2000)
+
+//clearTimeout() -- used to stop setTimeout, mostly used on event like if I click on a button before 2000ms, the setTimeout API
+//will not be called
+const timeOut = setTimeout(changeTitle,2000)
+document.querySelector('#stop').addEventListener('click',function() {
+    clearTimeout()
+})
+
+
+
+
+</script>
+</html>
