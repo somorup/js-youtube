@@ -27,11 +27,8 @@ setTimeout(changeTitle,2000)
 //will not be called
 const timeOut = setTimeout(changeTitle,2000)
 document.querySelector('#stop').addEventListener('click',function() {
-    clearTimeout()
+    clearTimeout(timeOut)
+    console.log("stopped");
 })
-
-
-
-
 </script>
 </html>
