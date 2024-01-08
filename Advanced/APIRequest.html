@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: aliceblue;">
+<p>XMLHttpRequest Ready State:</p>
+    <li>0 UNOPENED open() is not called.</li>
+
+    <li>1 OPENED open is called but send() is not called.</li>
+
+    <li>2 HEADERS_RECEIVED send() is called, and headers and status are available.</li>
+
+    <li>3 LOADING Downloading data; responseText holds the data.</li>
+
+    <li>4 DONE The operation is completed fully.</li>
+</body>
+<script>
+    //we first need to create an object of XMLHttpRequest(). This method contains readystate and date request send and response 
+    //received using this
+    const xhr=new XMLHttpRequest()
+    //request is send using open('GET'/'POST'/'PUT'/payload)
+    const requestUrl = 'https://api.github.com/users/somorup'
+    xhr.open('GET',requestUrl)
+    //to see the change in readystate in everystep we can use onreadystatechange(function(){})
+    xhr.onreadystatechange=function(){
+        console.log(xhr.readyState); //1 do not come since it is the 1st step, from 2nd step it is notified
+        if(xhr.readyState===4)
+        {
+            console.log(this.responseText);//to print the response.'this' means current context 
+            /*responseText is received in string format. how to check? 
+            const data = this.responseText
+            console.log(typeof data)
+            */
+           /*to access the contents inside this data, we need to change it to an object
+           to change to Number type-- const data = Number(this.responseText)
+           to change to String type-- const data = String(this.responseText)*/
+           //let us try to print the number of followers from this data
+           //changing data type to Object
+           const data = JSON.parse(this.responseText)
+           
+        }
+    }
+    
+    xhr.send()
+</script> 
+</html>
