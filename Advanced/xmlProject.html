@@ -1,0 +1,46 @@
+//Project to make a card having hiteshchoudhary's pic followed by Number of Followers and his bio from github api
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: aliceblue;">
+<div class="card">
+        <img src="image.png" alt="Avatar" style="width:50%">
+        
+          <h4>John Doe</h4>
+          <p>Architect & Engineer</p>
+        
+      </div>
+</body>
+
+<h4>Click on the button to get more details</h4>
+<button type="button" id="button">Click Me</button>
+
+<script>
+	
+    const xhr=new XMLHttpRequest()
+    const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
+    xhr.open('GET',requestUrl)
+    xhr.onreadystatechange=function(){
+        if(xhr.readyState===4)
+        {
+          
+          console.log(this.responseText)
+           const data = JSON.parse(this.responseText)
+           const followers= data.followers
+           const image = data.avatar_url
+           document.querySelector(".card img").setAttribute("src" ,`${image}`);
+           document.querySelector("h4").innerHTML=`${data.name} , Followers: ${data.followers}`
+           const button = document.querySelector("#button")
+           document.querySelector("p").innerHTML = `${data.bio}.`
+            
+        }
+    }
+    
+    xhr.send()
+    
+</script> 
+</html>
