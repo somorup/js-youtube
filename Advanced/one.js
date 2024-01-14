@@ -130,3 +130,15 @@ fetch('https://jsonplaceholder.typicode.com/users')
 
 //here function calling is also not required unlike prev
 //Note even if i write async function ahead of fetch in the code still fetch result will come ahead in log
+
+/*Fetch contains two parts--
+response = fetch('something')
+-one part reserves space in the memory
+    -it contains two array, onfulfilled[] and onRejection[]. onfulfilled[] works when resolve and onRejection[]
+     works when reject.
+-another part handles web browser/node, web browser/node gives the required resources to fire the network request.
+    if network request has been send to the network and any response(Note: even if 404 error comes still it is considered as a response)
+     comes then it is stored into onfulfilled[] and 
+    if no respose comes/request coukd not be send to the network then it is stored into onRejection[]
+        and the values are updated into our variable response
+*/
